@@ -17,10 +17,10 @@ COPY . .
 # Set environment variables
 ENV FLASK_APP=app
 ENV FLASK_ENV=production
-ENV PORT=80
+ENV PORT=3000
 
 # Expose port
-EXPOSE 80
+EXPOSE 3000
 
 # Start Gunicorn
-CMD gunicorn --bind 0.0.0.0:80 wsgi:app
+CMD gunicorn --bind 0.0.0.0:3000 "app:create_app()"
